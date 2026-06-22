@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Enable CORS
 app.use(cors({
-  origin: '*', // For development, allow all. In production, specify frontend URL
+  origin: process.env.NODE_ENV === 'production' ? 'https://ictms-frontend.vercel.app' : 'http://localhost:5173',
   credentials: true
 }));
 
